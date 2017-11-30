@@ -1,0 +1,7 @@
+USERNAME=user
+PASSWORD=passwd
+API_KEY=anything-goes
+CLIENT_ID=1234
+CLIENT_SECRET=asdf
+ACCESS_TOKEN=a_token
+REFRESH_TOKEN=a_refresh_token

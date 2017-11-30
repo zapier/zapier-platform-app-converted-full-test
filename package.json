@@ -1,0 +1,35 @@
+{
+  "name": "full-test-converted-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Full Test Converted App tests everything in the legacy-scripting-runner.",
+  "main": "index.js",
+  "scripts": {
+    "test-basic": "echo 'Testing with Basic auth...' && AUTH_TYPE=basic node node_modules/mocha/bin/mocha --recursive --timeout=10000",
+    "test-api-header": "echo 'Testing with API Keys on Header...' && AUTH_TYPE=api-header node node_modules/mocha/bin/mocha --recursive --timeout=10000",
+    "test-api-query": "echo 'Testing with API Keys on Query String...' && AUTH_TYPE=api-query node node_modules/mocha/bin/mocha --recursive --timeout=10000",
+    "test-session": "echo 'Testing with Session auth...' && AUTH_TYPE=session node node_modules/mocha/bin/mocha --recursive --timeout=10000",
+    "test-oauth2": "echo 'Testing with OAuth 2...' && AUTH_TYPE=oauth2 node node_modules/mocha/bin/mocha --recursive --timeout=10000",
+    "lint": "node_modules/.bin/eslint .",
+    "test": "echo '\nStarting tests for all auth types...\n' && npm run test-basic && npm run test-api-header && npm run test-api-query && npm run test-session && npm run test-oauth2",
+    "posttest": "npm run lint"
+  },
+  "engines": {
+    "node": "6.10.2",
+    "npm": "3.10.10"
+  },
+  "dependencies": {
+    "async": "2.5.0",
+    "lodash": "4.17.4",
+    "moment-timezone": "0.5.13",
+    "xmldom": "0.1.27",
+    "zapier-platform-core": "3.3.0",
+    "zapier-platform-legacy-scripting-runner": "1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "4.9.0",
+    "eslint-plugin-zapier": "3.1.0",
+    "mocha": "4.0.1",
+    "should": "13.1.2"
+  }
+}
